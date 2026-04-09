@@ -1,0 +1,29 @@
+# fly.toml — PolyScore on Fly.io
+# fly launch → fly secrets set BOT_TOKEN=xxx → fly deploy
+
+app = "polyscore"
+primary_region = "iad"
+
+[build]
+  # Auto-detected Python app
+
+[env]
+  # Non-secret config
+  DB_PATH = "/data/polyscore.db"
+  BUILDER_CODE = "polyscore"
+
+[mounts]
+  # Persistent volume for SQLite database
+  source = "polyscore_data"
+  destination = "/data"
+
+[processes]
+  worker = "python bot.py"
+
+[[services]]
+  # Telegram bots don't need HTTP — worker process only
+  protocol = "tcp"
+  internal_port = 8080
+
+[checks]
+  # Health check disabled for worker-only app

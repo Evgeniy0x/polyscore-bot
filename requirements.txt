@@ -1,0 +1,9 @@
+python-telegram-bot==21.9
+aiohttp==3.10.11
+aiosqlite==0.20.0
+pillow>=11.0.0
+python-dotenv==1.0.1
+eth-account==0.8.0
+deep-translator==1.11.4
+py-clob-client>=0.9.0
+py-builder-signing-sdk>=0.0.2

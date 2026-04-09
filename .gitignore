@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
+.DS_Store
+.vercel
+.bot.lock
+test_builder.py
+*.log
